@@ -1,9 +1,10 @@
-import {clone, isFunction} from 'lodash';
-import castPath from 'lodash/_castPath';
+import toPath from 'lodash.topath';
+import clone from 'lodash.clone';
+import isFunction from './isFunction';
 import isNumeric from './isNumeric';
 
-export default function( _object, _path, _updater ){
-    let path = clone(castPath(_path, _object));
+export default function( _object, _path, _updater ) {
+    let path = toPath(_path, _object);
     
     let clonePath = ( obj ) => {
         obj = clone(obj);
